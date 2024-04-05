@@ -73,7 +73,7 @@ for i = 1:size(matrix_first_flag,1)
     interval_end = 2; %1
     X = t_IDIF_emi(end-interval_end:end)';
     Y = matrix_first_flag(i,end-interval_end:end)';
-    G = [X ones(size(X))];
+    G = [X; ones(size(X))]';
     slope_end = G\Y;
     slope_end = slope_end(1);
     p_4_eSlope(i,1) = slope_end;
@@ -88,7 +88,7 @@ for i = 1:size(matrix_first_flag,1)
     end
     X = t_IDIF_emi(starting:p_0_tMax)';
     Y = matrix_first_flag(i,starting:p_0_tMax)';
-    G = [X ones(size(X))];
+    G = [X; ones(size(X))]';
     slope_max = G\Y;
     slope_max = slope_max(1);
     p_5_mSlope(i,1) = slope_max;

@@ -35,8 +35,8 @@ else
         
     W = diag(IB12);
     %tacint  = cumtrapz(ts,TAC);
-    Y       = TAC(N-nrpoints+1:N)./Cp(N-nrpoints+1:N);
-    X       = [Cpint(N-nrpoints+1:N)./Cp(N-nrpoints+1:N) ones(nrpoints,1)];
+    Y       = TAC(N-nrpoints+1:N)./Cp(N-nrpoints+1:N)';
+    X       = [Cpint(N-nrpoints+1:N)./Cp(N-nrpoints+1:N); ones(nrpoints,1)']';
     P       = inv(X'*W*X)*X'*W*Y;
     resid   = (Y-X*P)'*W*(Y-X*P);
     gamma   = resid/(N-np);

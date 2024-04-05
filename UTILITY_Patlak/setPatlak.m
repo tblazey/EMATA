@@ -3,8 +3,8 @@ function [Cp,Cpint,time,TAC_extended,weights]=setPatlak(plasma,plasma_time,time,
 t_Cp=plasma_time;
 Cp=plasma;
 if t_Cp(1)~=0
-    t_Cp=[0;t_Cp];
-    Cp=[0;Cp];
+    t_Cp=[0; t_Cp];
+    Cp=[0; Cp];
 end
 %Check Tissue
 if time(1)~=0
@@ -14,9 +14,9 @@ if time(1)~=0
         temp(f+1,:)=TAC_extended(f,:);
     end
     TAC_extended=temp;
-    time=[0;time];
+    time=[0, time];
     max_w=max(weights);
-    weights=[max_w;weights];
+    weights=[max_w; weights];
     %reference=[0;reference];
 end
 
